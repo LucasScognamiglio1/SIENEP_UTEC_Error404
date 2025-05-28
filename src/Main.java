@@ -1,15 +1,45 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello!");
 
-        for (int i = 2; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Crear permisos para el rol
+        List<String> permisosAdmin = new ArrayList<>();
+        permisosAdmin.add("GESTIONAR_USUARIOS");
+        permisosAdmin.add("VER_REPORTES");
+
+        // Crear un rol
+        Rol rolAdmin = new Rol("Administrador", permisosAdmin);
+
+        // Crear un usuario
+        Usuario usuario1 = new Usuario(
+                1,
+                "Juan Pérez",
+                "juan.perez@ejemplo.com",
+                "1234",
+                rolAdmin
+        );
+
+        // Mostrar información básica
+        System.out.println("Nombre: " + usuario1.getNombre());
+        System.out.println("Rol: " + usuario1.getRol().getNombre());
+        System.out.println("¿Tiene permiso de VER_REPORTES? " + usuario1.getRol().tienePermiso("VER_REPORTES"));
+
+        // Cambiar la contraseña
+        usuario1.cambiarContraseña("nuevaPassword123");
+        System.out.println("Contraseña actualizada");
+
+        // Validar email
+        boolean esEmailCorrecto = usuario1.validarEmail("juan.perez@ejemplo.com");
+        System.out.println("¿Email válido? " + esEmailCorrecto);
+
+        // Agregar nuevo permiso
+        usuario1.getRol().agregarPermiso("EDITAR_PERFIL");
+
+        // Comprobar nuevo permiso
+        System.out.println("¿Tiene permiso EDITAR_PERFIL? " + usuario1.getRol().tienePermiso("EDITAR_PERFIL"));
+
+        System.out.println(usuario1.getRol().getPermisos());
     }
 }

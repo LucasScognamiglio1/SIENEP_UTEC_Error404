@@ -107,15 +107,11 @@ public class Instancia {
             return new Instancia(id, titulo, tipo, fechaHora, comentarios, confidencial, origen);
         }
 
-        //Se crea una nueva instancia basada en un recordatorio
+        //Se crea una nueva instancia basada en un recordatorio (los otros campos quedan vacíos ya que no podemos garantizar que los datos del recordatorio coincidan con la acción real realizada)
         public static Instancia crearDesdeRecordatorio(Recordatorio recordatorio) {
-            // desde Recordatorio
             Instancia nuevaInstancia = new Instancia();
-            nuevaInstancia.setTitulo(recordatorio.getTitulo());
-            nuevaInstancia.setFechaHora(recordatorio.getFechaHora());
-            nuevaInstancia.setTipo(recordatorio.getTipo());
-            nuevaInstancia.setComentarios("Instancia creada desde recordatorio.");
-            nuevaInstancia.setConfidencial(true); // Se establece en true por defecto para cuidar la privacidad.
+            nuevaInstancia.setComentarios("Instancia creada a partir del recordatorio: " + recordatorio.getTitulo());
+            nuevaInstancia.setConfidencial(true); // Se establece en true por defecto para cuidar la privacidad
             nuevaInstancia.setOrigen("Dirección");
             return nuevaInstancia;
         }

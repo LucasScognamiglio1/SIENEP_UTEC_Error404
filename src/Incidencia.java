@@ -1,6 +1,5 @@
 import java.time.LocalDate;
-public class insidencia {
-    public class Incidencia {
+public class Incidencia {
 
         private int id;
         private String descripcion;
@@ -29,4 +28,4 @@ public class insidencia {
             System.out.println("Incidencia de " + estudiante.getNombreCompleto() + ": " + descripcion);
         }
     }
-}
+

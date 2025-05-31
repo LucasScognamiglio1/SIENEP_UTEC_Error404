@@ -189,4 +189,18 @@ public class Estudiante {
     public void actualizarEstado(String nuevoEstado) {
         this.estadoSeguimiento = nuevoEstado;
     }
+    // Metodo toString sobrescrito para mostrar una representación clara y resumida del estudiante.
+
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "cedula='" + cedula + '\'' +
+                ", nombreCompleto='" + nombreCompleto + '\'' +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", carrera='" + carrera + '\'' +
+                ", grupo='" + grupo + '\'' +
+                ", sistemaSalud='" + sistemaSalud + '\'' +
+                ", estadoSeguimiento='" + estadoSeguimiento + '\'' +
+                '}';
+    }
 }

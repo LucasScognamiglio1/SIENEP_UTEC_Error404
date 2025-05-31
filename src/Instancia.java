@@ -115,5 +115,18 @@ public class Instancia {
             nuevaInstancia.setOrigen("Dirección");
             return nuevaInstancia;
         }
+
+    // Metodo toString sobrescrito para mostrar los datos principales de la instancia de seguimiento
+    @Override
+    public String toString() {
+        return "Instancia{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", fechaHora=" + fechaHora +
+                ", confidencial=" + confidencial +
+                ", origen='" + origen + '\'' +
+                '}';
+    }
     }
 

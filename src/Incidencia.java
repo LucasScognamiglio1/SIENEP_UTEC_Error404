@@ -27,5 +27,19 @@ public class Incidencia {
         public void consultarPorEstudiante() {
             System.out.println("Incidencia de " + estudiante.getNombreCompleto() + ": " + descripcion);
         }
+
+        // Metodo toString sobrescrito para mostrar los datos principales de la insidencia
+        @Override
+        public String toString() {
+            return "Insidencia{" +
+                    "id=" + id +
+                    ", descripcion='" + descripcion + '\'' +
+                    ", fecha=" + fecha +
+                    ", lugar='" + lugar + '\'' +
+                    ", personasInvolucradas='" + personasInvolucradas + '\'' +
+                    ", registradoPor=" + (registradoPor != null ? registradoPor.getNombre() : "Sin usuario asignado") +
+                    ", estudiante=" + (estudiante != null ? estudiante.getNombreCompleto() : "Sin estudiante asignado") +
+                    '}';
+        }
     }
 

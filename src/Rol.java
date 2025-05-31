@@ -34,4 +34,13 @@ public class Rol {
     public boolean tienePermiso(String permiso) {
         return this.permisos.contains(permiso);
     }
+
+    // Metodo toString sobrescrito para mostrar el nombre y permisos del rol
+    @Override
+    public String toString() {
+        return "Rol{" +
+                "nombre='" + nombre + '\'' +
+                ", permisos=" + permisos +
+                '}';
+    }
 }

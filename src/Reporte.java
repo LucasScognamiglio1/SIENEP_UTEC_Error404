@@ -27,4 +27,15 @@ public class Reporte {
                 System.out.println("No hay reportes en el rango de fechas especificado.");
             }
         }
+     // Metodo toString sobrescrito para mostrar los datos principales del reporte
+        @Override
+        public String toString() {
+            return "Reporte{" +
+                    "id=" + id +
+                    ", fechaGeneracion=" + fechaGeneracion +
+                    ", tipo='" + tipo + '\'' +
+                    ", formato='" + formato + '\'' +
+                    ", estudiante=" + (estudiante != null ? estudiante.getNombreCompleto() : "Sin estudiante asignado") +
+                    '}';
+        }
     }

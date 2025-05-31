@@ -74,5 +74,18 @@ public class Usuario {
         return this.email.equals(email);
     }
 
+    // Metodo toString sobrescrito para mostrar los datos principales del usuario
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", rol=" + (rol != null ? rol.getNombre() : "Sin rol asignado") +
+                '}'; //si tiene rol asignado, muestra el dato desde rol (nombre), sino msj automático indicando que no tiene rol asignado
+    }
+
 }
+
+
 

@@ -92,4 +92,17 @@ public class Auditoria {
             System.out.println("No se encontraron cambios para la entidad: " + entidad);
         }
     }
+
+    // Metodo toString sobrescrito para mostrar los datos principales del registro de auditoria
+    @Override
+    public String toString() {
+        return "Auditoria{" +
+                "id=" + id +
+                ", accion='" + accion + '\'' +
+                ", fecha=" + fecha +
+                ", usuario=" + (usuario != null ? usuario.getNombre() : "Desconocido") +
+                ", entidadModificada='" + entidadModificada + '\'' +
+                ", idEntidad=" + idEntidad +
+                '}';
+    }
 }

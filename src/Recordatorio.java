@@ -102,4 +102,18 @@ public class Recordatorio {
         return nuevaInstancia;
     }
 
+    // Metodo toString sobrescrito para mostrar los datos principales del recordatorio
+    @Override
+    public String toString() {
+        return "Recordatorio{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", fechaHora=" + fechaHora +
+                ", tipo='" + tipo + '\'' +
+                ", frecuencia='" + frecuencia + '\'' +
+                ", medio='" + medio + '\'' +
+                ", estado='" + estado + '\'' +
+                '}';
+    }
+
 }

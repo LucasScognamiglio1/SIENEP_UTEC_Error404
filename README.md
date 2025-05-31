@@ -38,7 +38,7 @@ Se utilizan relaciones entre clases como asociación, agregación o composición
 | Nombre completo    | Usuario GitLab       | Usuario GitHub       | Aporte principal             |
 |--------------------|----------------------|----------------------|------------------------------|
 | Nestor Vargas      | @nestor.vargas       |                      | Clases Reporte / Incidencia  |
-| Lucas Scognamiglio | @lucas.scognamiglio  | @ignacioScognamiglio | Clases Usuario / Rol         |
+| Lucas Scognamiglio |                      | @ignacioScognamiglio | Clases Usuario / Rol         |
 | Cecilia Dean       | @cecilia.dean        | @cecilia-dean        | Clase Estudiante / Instancia |
 | Sebastián Álvarez  | @sebastian.alvarez.f |                      | Clase Auditoria              |
 | Santiago López     | @santiago.lopez.s.sa |                      | Clase Recordatorio           |

@@ -46,7 +46,7 @@ public class Estudiante {
         this.archivoAdjunto = archivoAdjunto;
     }
 
-    // Getters and Setters
+    // Getters and setters
     public String getCedula() {
         return cedula;
     }

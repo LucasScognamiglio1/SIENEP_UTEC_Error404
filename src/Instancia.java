@@ -28,7 +28,7 @@ public class Instancia {
             this.origen = origen;
         }
 
-        // Getters and Setters
+        // Getters and setters
         public int getId() {
             return id;
         }

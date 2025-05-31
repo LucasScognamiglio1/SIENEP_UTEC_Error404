@@ -24,7 +24,7 @@ public class Recordatorio {
         this.medio = medio; //Medio por el cual se enviará el recordatorio
         this.estado = estado;
     }
-    // Getters and Setters
+    // Getters and setters
     public int getId() {
         return id;
     }

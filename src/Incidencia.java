@@ -9,6 +9,10 @@ public class Incidencia {
         private Usuario registradoPor;
         private Estudiante estudiante;
 
+        public Incidencia() {
+
+        }
+
         public Incidencia(int id, String descripcion, LocalDate fecha, String lugar,
                           String personasInvolucradas, Usuario registradoPor, Estudiante estudiante) {
             this.id = id;

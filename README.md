@@ -35,13 +35,13 @@ Se utilizan relaciones entre clases como asociación, agregación o composición
 
 ## 👥 Participantes
 
-| Nombre completo    | Usuario GitLab       | Usuario GitHub       | Aporte principal             |
-|--------------------|----------------------|----------------------|------------------------------|
-| Nestor Vargas      | @nestor.vargas       |                      | Clases Reporte / Incidencia  |
+| Nombre completo    | Usuario GitLab       | Usuario GitHub     | Aporte principal             |
+|--------------------|----------------------|--------------------|------------------------------|
+| Nestor Vargas      | @nestor.vargas       |                    | Clases Reporte / Incidencia  |
 | Lucas Scognamiglio |                      | @ignacioScognamiglio | Clases Usuario / Rol         |
-| Cecilia Dean       | @cecilia.dean        | @cecilia-dean        | Clase Estudiante / Instancia |
-| Sebastián Álvarez  | @sebastian.alvarez.f |                      | Clase Auditoria              |
-| Santiago López     | @santiago.lopez.s.sa |                      | Clase Recordatorio           |
+| Cecilia Dean       | @cecilia.dean        | @cecilia-dean      | Clase Estudiante / Instancia |
+| Sebastián Álvarez  | @sebastian.alvarez.f |                    | Clase Auditoria              |
+| Santiago López     | @santiago.lopez.s.sa |                    | Clase Recordatorio           |
 
 > Se puede verificar la participación individual a través del historial de commits en este repositorio.
 

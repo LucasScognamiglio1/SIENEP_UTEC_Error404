@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Estudiante {
 //Descripción: Representa a un estudiante registrado para seguimiento.
@@ -19,6 +21,10 @@ public class Estudiante {
     private String observaciones;
     private String observacionesConfidenciales;
     private String archivoAdjunto;
+    private List<Instancia> instancias = new ArrayList<>();
+    private List<Incidencia> incidencias = new ArrayList<>();
+    private List<Recordatorio> recordatorios = new ArrayList<>();
+    private List<Reporte> reportes = new ArrayList<>();
 
 
     public Estudiante() {
@@ -47,6 +53,8 @@ public class Estudiante {
     }
 
     // Getters and setters
+
+
     public String getCedula() {
         return cedula;
     }
@@ -167,6 +175,22 @@ public class Estudiante {
         this.archivoAdjunto = archivoAdjunto;
     }
 
+    public List<Instancia> getInstancias() {
+        return instancias;
+    }
+
+    public List<Incidencia> getIncidencias() {
+        return incidencias;
+    }
+
+    public List<Recordatorio> getRecordatorios() {
+        return recordatorios;
+    }
+
+    public List<Reporte> getReportes() {
+        return reportes;
+    }
+
     // Métodos
     public void verDatos() {
         System.out.println("Nombre completo: " + nombreCompleto);
@@ -188,6 +212,22 @@ public class Estudiante {
 
     public void actualizarEstado(String nuevoEstado) {
         this.estadoSeguimiento = nuevoEstado;
+    }
+
+    public void agregarInstancia(Instancia instancia) {
+        this.instancias.add(instancia);
+    }
+
+    public void agregarIncidencia(Incidencia incidencia) {
+        this.incidencias.add(incidencia);
+    }
+
+    public void agregarRecordatorio(Recordatorio recordatorio) {
+        this.recordatorios.add(recordatorio);
+    }
+
+    public void agregarReporte(Reporte reporte) {
+        this.reportes.add(reporte);
     }
     // Metodo toString sobrescrito para mostrar una representación clara y resumida del estudiante.
 

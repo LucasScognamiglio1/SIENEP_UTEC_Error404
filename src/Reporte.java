@@ -7,6 +7,10 @@ public class Reporte {
         private String formato;
         private Estudiante estudiante;
 
+        public Reporte() {
+
+        }
+
         public Reporte(int id, LocalDate fechaGeneracion, String tipo, String formato, Estudiante estudiante) {
             this.id = id;
             this.fechaGeneracion = fechaGeneracion;

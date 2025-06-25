@@ -11,14 +11,17 @@ public class Instancia {
         private LocalDateTime fechaHora;
         private String comentarios;
         private boolean confidencial;
-        private String origen; // Estudiante / Dirección
+        private String origen; // Estudiante o Dirección
+        private Estudiante estudiante;
+        private Usuario registradoPor;
+
 
 
         public Instancia() {
         }
 
         // Constructor
-        public Instancia(int id, String titulo, String tipo, LocalDateTime fechaHora, String comentarios, boolean confidencial, String origen) {
+        public Instancia(int id, String titulo, String tipo, LocalDateTime fechaHora, String comentarios, boolean confidencial, String origen, Estudiante estudiante, Usuario registradoPor) {
             this.id = id;
             this.titulo = titulo;
             this.tipo = tipo;
@@ -26,6 +29,8 @@ public class Instancia {
             this.comentarios = comentarios;
             this.confidencial = confidencial;
             this.origen = origen;
+            this.estudiante = estudiante;
+            this.registradoPor = registradoPor;
         }
 
         // Getters and setters
@@ -85,6 +90,22 @@ public class Instancia {
             this.origen = origen;
         }
 
+        public Estudiante getEstudiante() {
+            return estudiante;
+        }
+
+        public void setEstudiante(Estudiante estudiante) {
+            this.estudiante = estudiante;
+        }
+
+        public Usuario getRegistradoPor() {
+            return registradoPor;
+        }
+
+        public void setRegistradoPor(Usuario registradoPor) {
+            this.registradoPor = registradoPor;
+        }
+
         // Métodos
 
         //Para registrar una nueva instancia
@@ -104,7 +125,7 @@ public class Instancia {
 
         //Metodo para clonar una instancia
         public Instancia clonar() {
-            return new Instancia(id, titulo, tipo, fechaHora, comentarios, confidencial, origen);
+            return new Instancia(id, titulo, tipo, fechaHora, comentarios, confidencial, origen, estudiante, registradoPor);
         }
 
         //Se crea una nueva instancia basada en un recordatorio (los otros campos quedan vacíos ya que no podemos garantizar que los datos del recordatorio coincidan con la acción real realizada)
@@ -126,7 +147,9 @@ public class Instancia {
                 ", fechaHora=" + fechaHora +
                 ", confidencial=" + confidencial +
                 ", origen='" + origen + '\'' +
-                '}';
+                ", estudiante='" + estudiante + '\'' +
+                ", registradoPor=" + registradoPor +
+        '}';
     }
-    }
+}
 

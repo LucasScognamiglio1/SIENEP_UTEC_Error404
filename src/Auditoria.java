@@ -7,7 +7,7 @@ public class Auditoria {
     private int id;
     private String accion; // crear, editar, eliminar
     private LocalDateTime fecha;
-    private Usuario usuario;
+    private Usuario usuario; //usuario responsable de la accion
     private String entidadModificada;
     private int idEntidad;
 

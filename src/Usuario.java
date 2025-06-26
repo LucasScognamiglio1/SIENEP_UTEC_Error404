@@ -36,4 +36,7 @@ public class Usuario {
     public String getNombre() {
         return nombre;
     }
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
 }

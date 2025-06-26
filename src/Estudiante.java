@@ -47,6 +47,9 @@ public class Estudiante extends Usuario {
     public String getNombreCompleto() {
         return nombreCompleto;
     }
+    public String getObservacionesConfidenciales(){
+        return observacionesConfidenciales;
+    }
 
     public void verDatos() {
         System.out.println("Estudiante: " + nombreCompleto + " (" + cedula + ")");

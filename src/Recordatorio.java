@@ -11,18 +11,22 @@ public class Recordatorio {
     private String frecuencia; // único, diario, semanal, mensual
     private String medio; // WhatsApp, email
     private String estado; // vencido, activo, cumplido
+    private Instancia instancia;
 
     public Recordatorio() {
     }
 
-    public Recordatorio(int id, String titulo, LocalDateTime fechaHora, String tipo, String frecuencia, String medio, String estado) {
+    public Recordatorio(int id, String titulo, LocalDateTime fechaHora,
+                        String tipo, String frecuencia, String medio, String estado,
+                        Instancia instancia) {
         this.id = id;
         this.titulo = titulo;
         this.fechaHora = fechaHora;
         this.tipo = tipo;
         this.frecuencia = frecuencia;
-        this.medio = medio; //Medio por el cual se enviará el recordatorio
+        this.medio = medio;
         this.estado = estado;
+        this.instancia = instancia;
     }
     // Getters and setters
     public int getId() {
@@ -85,21 +89,20 @@ public class Recordatorio {
 
     // Envía una notificación mostrando el título del recordatorio
     public void enviarNotificacion() {
-        System.out.println("Recordatorio: " + titulo);
+        System.out.println("Enviando recordatorio por " + medio + ": " + titulo);
     }
 
-    // Actualiza el estado del recordatorio (vencido, activo, cumplido)
     public void actualizarEstado(String nuevoEstado) {
         this.estado = nuevoEstado;
     }
 
     // Crea una nueva instancia de seguimiento basada en este recordatorio (los campos restantes quedan vacíos ya que deben completarse con los datos reales de la acción realizada)
     public Instancia crearInstanciaRelacionada() {
-        Instancia nuevaInstancia = new Instancia();
-        nuevaInstancia.setComentarios("Instancia creada a partir del recordatorio: " + this.titulo);
-        nuevaInstancia.setConfidencial(true); // Se puede cambiar, se setea true por default por motivos de privacidad
-        nuevaInstancia.setOrigen("Dirección");
-        return nuevaInstancia;
+        return new Instancia(
+                id + 1000, "Instancia desde recordatorio: " + titulo, tipo,
+                fechaHora.plusDays(1), "Generada automáticamente", false,
+                "Recordatorio", instancia.getEstudiante(), instancia.getRegistradoPor()
+        );
     }
 
     // Metodo toString sobrescrito para mostrar los datos principales del recordatorio

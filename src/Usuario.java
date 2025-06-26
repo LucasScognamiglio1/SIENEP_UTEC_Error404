@@ -1,13 +1,10 @@
 public class Usuario {
-//Descripción: Representa a toda persona que accede al sistema (administrador, psicopedagogo, analista, estudiante, funcionario).
+    protected int id;
+    protected String nombre;
+    protected String email;
+    protected String password;
+    protected Rol rol;
 
-    private int id;
-    private String nombre;
-    private String email;
-    private String password;
-    private Rol rol;
-
-// Constructor
     public Usuario(int id, String nombre, String email, String password, Rol rol) {
         this.id = id;
         this.nombre = nombre;
@@ -16,76 +13,27 @@ public class Usuario {
         this.rol = rol;
     }
 
-//Getters and Setters
-    public int getId() {
-        return id;
+    public void iniciarSesion() {
+        System.out.println(nombre + " ha iniciado sesión.");
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void cerrarSesion() {
+        System.out.println(nombre + " ha cerrado sesión.");
     }
 
-    public String getNombre() {
-        return nombre;
+    public void cambiarPassword(String nueva) {
+        this.password = nueva;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public boolean validarEmail() {
+        return email.contains("@");
     }
 
     public Rol getRol() {
         return rol;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public String getNombre() {
+        return nombre;
     }
-
-//Métodos
-    public void iniciarSesion() {
-
-    }
-
-    public void cerrarSesion() {
-
-    }
-
-    public void cambiarContraseña(String nuevaPassword) {
-        this.password = nuevaPassword;
-    }
-
-    public boolean validarEmail(String email) {
-        return this.email.equals(email);
-    }
-
-    // Metodo toString sobrescrito para mostrar los datos principales del usuario
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", email='" + email + '\'' +
-                ", rol=" + (rol != null ? rol.getNombre() : "Sin rol asignado") +
-                '}'; //si tiene rol asignado, muestra el dato desde rol (nombre), sino msj automático indicando que no tiene rol asignado
-    }
-
 }
-
-
-

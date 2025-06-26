@@ -1,5 +1,6 @@
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Instancia {
 //Descripción: Reunión, llamada o coordinación relacionada al estudiante.
@@ -14,14 +15,16 @@ public class Instancia {
         private String origen; // Estudiante o Dirección
         private Estudiante estudiante;
         private Usuario registradoPor;
-
+        private List<Recordatorio> recordatorios;
 
 
         public Instancia() {
         }
 
         // Constructor
-        public Instancia(int id, String titulo, String tipo, LocalDateTime fechaHora, String comentarios, boolean confidencial, String origen, Estudiante estudiante, Usuario registradoPor) {
+        public Instancia(int id, String titulo, String tipo, LocalDateTime fechaHora,
+                         String comentarios, boolean confidencial, String origen,
+                         Estudiante estudiante, Usuario registradoPor) {
             this.id = id;
             this.titulo = titulo;
             this.tipo = tipo;
@@ -31,6 +34,7 @@ public class Instancia {
             this.origen = origen;
             this.estudiante = estudiante;
             this.registradoPor = registradoPor;
+            this.recordatorios = new ArrayList<>();
         }
 
         // Getters and setters
@@ -110,7 +114,7 @@ public class Instancia {
 
         //Para registrar una nueva instancia
         public void registrar() {
-            System.out.println("Instancia registrada: " + titulo + " el " + fechaHora);
+            System.out.println("Instancia registrada: " + getTitulo() + " el " + getFechaHora());
         }
 
         //Para modificar los datos de la instancia ya creada
@@ -125,7 +129,8 @@ public class Instancia {
 
         //Metodo para clonar una instancia
         public Instancia clonar() {
-            return new Instancia(id, titulo, tipo, fechaHora, comentarios, confidencial, origen, estudiante, registradoPor);
+            return new Instancia(id + 1, titulo + " (clon)", tipo, fechaHora,
+                    comentarios, confidencial, origen, estudiante, registradoPor);
         }
 
         //Se crea una nueva instancia basada en un recordatorio (los otros campos quedan vacíos ya que no podemos garantizar que los datos del recordatorio coincidan con la acción real realizada)
@@ -135,6 +140,14 @@ public class Instancia {
             nuevaInstancia.setConfidencial(true); // Se establece en true por defecto para cuidar la privacidad
             nuevaInstancia.setOrigen("Dirección");
             return nuevaInstancia;
+        }
+
+        public void agregarRecordatorio(Recordatorio r) {
+            this.recordatorios.add(r);
+        }
+
+        public List<Recordatorio> getRecordatorios() {
+            return recordatorios;
         }
 
     // Metodo toString sobrescrito para mostrar los datos principales de la instancia de seguimiento

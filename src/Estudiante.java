@@ -1,40 +1,31 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Estudiante {
-//Descripción: Representa a un estudiante registrado para seguimiento.
-
-// Atributos
-    private String cedula; // id
+public class Estudiante extends Usuario {
+    private String cedula;
     private String nombreCompleto;
     private LocalDate fechaNacimiento;
     private String direccion;
     private String telefono;
-    private String foto; // url
+    private String foto;
     private String grupo;
     private String carrera;
     private String sistemaSalud;
     private String motivoDerivacion;
     private String infoMedica;
+    private String tratamientos;
     private String estadoSeguimiento;
     private String observaciones;
-    private String observacionesConfidenciales;
     private String archivoAdjunto;
-    private List<Instancia> instancias = new ArrayList<>();
-    private List<Incidencia> incidencias = new ArrayList<>();
-    private List<Recordatorio> recordatorios = new ArrayList<>();
-    private List<Reporte> reportes = new ArrayList<>();
+    private String observacionesConfidenciales;
 
+    public Estudiante(int id, String nombre, String email, String password, Rol rol,
+                      String cedula, String nombreCompleto, LocalDate fechaNacimiento,
+                      String direccion, String telefono, String foto, String grupo,
+                      String carrera, String sistemaSalud, String motivoDerivacion,
+                      String infoMedica, String tratamientos, String estadoSeguimiento,
+                      String observaciones, String archivoAdjunto, String observacionesConfidenciales) {
 
-    public Estudiante() {
-    }
-
-    // Constructor
-    public Estudiante(String cedula, String nombreCompleto, LocalDate fechaNacimiento, String direccion,
-                      String telefono, String foto, String grupo, String carrera, String sistemaSalud,
-                      String motivoDerivacion, String infoMedica, String estadoSeguimiento,
-                      String observaciones, String observacionesConfidenciales, String archivoAdjunto) {
+        super(id, nombre, email, password, rol);
         this.cedula = cedula;
         this.nombreCompleto = nombreCompleto;
         this.fechaNacimiento = fechaNacimiento;
@@ -46,201 +37,49 @@ public class Estudiante {
         this.sistemaSalud = sistemaSalud;
         this.motivoDerivacion = motivoDerivacion;
         this.infoMedica = infoMedica;
+        this.tratamientos = tratamientos;
         this.estadoSeguimiento = estadoSeguimiento;
         this.observaciones = observaciones;
-        this.observacionesConfidenciales = observacionesConfidenciales;
         this.archivoAdjunto = archivoAdjunto;
-    }
-
-    // Getters and setters
-
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+        this.observacionesConfidenciales = observacionesConfidenciales;
     }
 
     public String getNombreCompleto() {
         return nombreCompleto;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
-    }
-
-    public String getCarrera() {
-        return carrera;
-    }
-
-    public void setCarrera(String carrera) {
-        this.carrera = carrera;
-    }
-
-    public String getSistemaSalud() {
-        return sistemaSalud;
-    }
-
-    public void setSistemaSalud(String sistemaSalud) {
-        this.sistemaSalud = sistemaSalud;
-    }
-
-    public String getMotivoDerivacion() {
-        return motivoDerivacion;
-    }
-
-    public void setMotivoDerivacion(String motivoDerivacion) {
-        this.motivoDerivacion = motivoDerivacion;
-    }
-
-    public String getInfoMedica() {
-        return infoMedica;
-    }
-
-    public void setInfoMedica(String infoMedica) {
-        this.infoMedica = infoMedica;
-    }
-
-    public String getEstadoSeguimiento() {
-        return estadoSeguimiento;
-    }
-
-    public void setEstadoSeguimiento(String estadoSeguimiento) {
-        this.estadoSeguimiento = estadoSeguimiento;
-    }
-
-    public String getObservaciones() {
-        return observaciones;
-    }
-
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
-    }
-
-    public String getObservacionesConfidenciales() {
-        return observacionesConfidenciales;
-    }
-
-    public void setObservacionesConfidenciales(String observacionesConfidenciales) {
-        this.observacionesConfidenciales = observacionesConfidenciales;
-    }
-
-    public String getArchivoAdjunto() {
-        return archivoAdjunto;
-    }
-
-    public void setArchivoAdjunto(String archivoAdjunto) {
-        this.archivoAdjunto = archivoAdjunto;
-    }
-
-    public List<Instancia> getInstancias() {
-        return instancias;
-    }
-
-    public List<Incidencia> getIncidencias() {
-        return incidencias;
-    }
-
-    public List<Recordatorio> getRecordatorios() {
-        return recordatorios;
-    }
-
-    public List<Reporte> getReportes() {
-        return reportes;
-    }
-
-    // Métodos
     public void verDatos() {
-        System.out.println("Nombre completo: " + nombreCompleto);
-        System.out.println("Cédula: " + cedula);
-        System.out.println("Fecha de nacimiento: " + fechaNacimiento);
-        System.out.println("Dirección: " + direccion);
-        System.out.println("Teléfono: " + telefono);
-        System.out.println("Foto: " + foto);
-        System.out.println("Grupo: " + grupo);
-        System.out.println("Carrera: " + carrera);
-        System.out.println("Sistema de salud: " + sistemaSalud);
-        System.out.println("Motivo de derivación: " + motivoDerivacion);
-        System.out.println("Información médica: " + infoMedica);
-        System.out.println("Estado de seguimiento: " + estadoSeguimiento);
-        System.out.println("Observaciones: " + observaciones);
-        System.out.println("Observaciones confidenciales: " + observacionesConfidenciales);
-        System.out.println("Archivo adjunto: " + archivoAdjunto);
+        System.out.println("Estudiante: " + nombreCompleto + " (" + cedula + ")");
     }
 
     public void actualizarEstado(String nuevoEstado) {
         this.estadoSeguimiento = nuevoEstado;
     }
 
-    public void agregarInstancia(Instancia instancia) {
-        this.instancias.add(instancia);
-    }
-
-    public void agregarIncidencia(Incidencia incidencia) {
-        this.incidencias.add(incidencia);
-    }
-
-    public void agregarRecordatorio(Recordatorio recordatorio) {
-        this.recordatorios.add(recordatorio);
-    }
-
-    public void agregarReporte(Reporte reporte) {
-        this.reportes.add(reporte);
-    }
-    // Metodo toString sobrescrito para mostrar una representación clara y resumida del estudiante.
-
     @Override
     public String toString() {
         return "Estudiante{" +
-                "cedula='" + cedula + '\'' +
-                ", nombreCompleto='" + nombreCompleto + '\'' +
-                ", fechaNacimiento=" + fechaNacimiento +
+                "rol=" + rol +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", id=" + id +
+                ", observacionesConfidenciales='" + observacionesConfidenciales + '\'' +
+                ", archivoAdjunto='" + archivoAdjunto + '\'' +
+                ", observaciones='" + observaciones + '\'' +
+                ", estadoSeguimiento='" + estadoSeguimiento + '\'' +
+                ", tratamientos='" + tratamientos + '\'' +
+                ", infoMedica='" + infoMedica + '\'' +
+                ", motivoDerivacion='" + motivoDerivacion + '\'' +
+                ", sistemaSalud='" + sistemaSalud + '\'' +
                 ", carrera='" + carrera + '\'' +
                 ", grupo='" + grupo + '\'' +
-                ", sistemaSalud='" + sistemaSalud + '\'' +
-                ", estadoSeguimiento='" + estadoSeguimiento + '\'' +
+                ", foto='" + foto + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", nombreCompleto='" + nombreCompleto + '\'' +
+                ", cedula='" + cedula + '\'' +
                 '}';
     }
 }
